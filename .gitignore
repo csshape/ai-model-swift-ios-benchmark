@@ -1,3 +1,6 @@
+# Your global ~/.gitignore_global excludes README.md — re-include it here
+!README.md
+
 # Xcode build output
 build/
 DerivedData/
