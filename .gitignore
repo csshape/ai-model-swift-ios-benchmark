@@ -1,0 +1,15 @@
+# Xcode build output
+build/
+DerivedData/
+*.xcresult
+
+# Screen recordings — large binaries; frames live in docs/screenshots/
+video/
+
+# macOS
+.DS_Store
+
+# Swift Package Manager
+.build/
+.swiftpm/
+Package.resolved

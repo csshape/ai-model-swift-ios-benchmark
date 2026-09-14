@@ -1,0 +1,82 @@
+name: OrbitLab
+options:
+  bundleIdPrefix: com.orbitlab
+  createIntermediateGroups: true
+  deploymentTarget:
+    iOS: "15.0"
+  minimumXcodeGenVersion: "2.40.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    IPHONEOS_DEPLOYMENT_TARGET: "15.0"
+    TARGETED_DEVICE_FAMILY: "1,2"
+    SWIFT_STRICT_CONCURRENCY: minimal
+    CLANG_ENABLE_MODULES: YES
+    ENABLE_USER_SCRIPT_SANDBOXING: YES
+    SWIFT_TREAT_WARNINGS_AS_ERRORS: NO
+
+targets:
+  OrbitLab:
+    type: application
+    platform: iOS
+    sources:
+      - path: OrbitLab
+    info:
+      path: OrbitLab/Resources/Info.plist
+      properties:
+        CFBundleDisplayName: OrbitLab-Claude
+        UILaunchScreen: {}
+        UIApplicationSupportsIndirectInputEvents: true
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.orbitlab.OrbitLab
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        GENERATE_INFOPLIST_FILE: NO
+
+  OrbitLabTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: OrbitLabTests
+    dependencies:
+      - target: OrbitLab
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.orbitlab.OrbitLabTests
+        GENERATE_INFOPLIST_FILE: YES
+
+  OrbitLabUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: OrbitLabUITests
+      - path: OrbitLab/Support/AccessibilityIdentifiers.swift
+        group: OrbitLab/Support
+    dependencies:
+      - target: OrbitLab
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.orbitlab.OrbitLabUITests
+        GENERATE_INFOPLIST_FILE: YES
+
+schemes:
+  OrbitLab:
+    build:
+      targets:
+        OrbitLab: all
+        OrbitLabTests: [test]
+        OrbitLabUITests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: false
+      targets:
+        - OrbitLabTests
+        - OrbitLabUITests

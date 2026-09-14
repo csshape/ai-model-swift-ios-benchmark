@@ -1,0 +1,765 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		03931BD5E08B1D3CCA0B3D5D /* TestFixtures.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0EB53EC2BED77ADDBC29499 /* TestFixtures.swift */; };
+		076B8FAB7F0AA170B517B91D /* TelemetryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F966BA534878BE8496677D99 /* TelemetryViewModel.swift */; };
+		082C9777694CCA6BD3C9289C /* AsyncTestSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817F19C6C8C0FDD729ACEEA4 /* AsyncTestSupport.swift */; };
+		0D615D10E11B661BC7EFE98B /* LoadState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7E311DC431B6E1FE9ECEA3 /* LoadState.swift */; };
+		0F106FF9E5237CA1ACCA0B0F /* TelemetryChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D1F52DDC9AFEE9F1A9734D3 /* TelemetryChartView.swift */; };
+		23F0E5F149A7B3956C665472 /* TelemetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33F43E3D5202E701815857BD /* TelemetryView.swift */; };
+		2F4CE1E4EA7312E884D79046 /* LocalMissionServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21C9117B5533264346B08EE0 /* LocalMissionServiceTests.swift */; };
+		3A340F035C9B11656E356D0B /* KeyValueStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51C41F3048062B9DBEB04CD /* KeyValueStoreTests.swift */; };
+		3EBAC51A25DA86A36295A4DD /* KeyValueStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C3519742A879366D0088FA /* KeyValueStore.swift */; };
+		40CEFC216794CE674E391868 /* AppContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B576DD4159FA3F34CD3AE29 /* AppContainer.swift */; };
+		41B532D5DFC77BE76E0850B9 /* CubeSceneController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2F1AB623B99E0FFDB3CA8B3 /* CubeSceneController.swift */; };
+		4649672263D99DE5D9EC66CC /* OrbitLabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5081EF52387F66FADDDB16CE /* OrbitLabApp.swift */; };
+		49996D39871CE1ABDF80B370 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4CF5AC6313B38DBE9DF9237 /* Haptics.swift */; };
+		598639009FE7CF53CE20BD35 /* CubeLabViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0686A2B377A03E18D09E5EB4 /* CubeLabViewModelTests.swift */; };
+		625B0F07D407AF7032EEC5C5 /* CubeFace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164E8C15B214D37E387205B0 /* CubeFace.swift */; };
+		68429755065B8EC5A95EA478 /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660689A8F19D7B1E31A803D /* AccessibilityIdentifiers.swift */; };
+		7B8ED362962F4ADCF08556EB /* TelemetrySource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CDC0DA6DDA40F0207B9D2F5 /* TelemetrySource.swift */; };
+		7EDDAA971FAA5AA07597AD82 /* CubeLabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C146AE3DD433FF72592918 /* CubeLabViewModel.swift */; };
+		8114D5182CC53786E005CF00 /* AppSettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A809C0631ECD53F01951D9 /* AppSettingsStore.swift */; };
+		8C82361A1E23BE6D2C425DBD /* MissionControlViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCE6095709F71BC349F2B46C /* MissionControlViewModelTests.swift */; };
+		8F6052CE0768DD277DA7C796 /* MissionControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573539984D5C36408F43528D /* MissionControlViewModel.swift */; };
+		90ED8713F83ED37963B803D5 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5758D042B5BAC21A89DC65D1 /* SettingsView.swift */; };
+		9520087C42E1F5C36BC88108 /* OrbitLabUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188921DA66617574C5DB9BB6 /* OrbitLabUITests.swift */; };
+		9D915A22FA2D640263C312F4 /* CubeSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 921B5F80EEED8EA7A1D071DE /* CubeSceneView.swift */; };
+		A1BC0C7B4C1F1751F0454954 /* SimulatedTelemetrySourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E6353261D8744515D98F782 /* SimulatedTelemetrySourceTests.swift */; };
+		A1DBF9687FCE3D0E0EB0468A /* CubeLabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1F88E615568D067BB40F242 /* CubeLabView.swift */; };
+		A808F8BFDC33FB9BD8F1335E /* AppSettingsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0674417C4C96A3965A9B2319 /* AppSettingsStoreTests.swift */; };
+		ACADC96A12E70EC2753F71A1 /* TelemetryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DF175E4CCB685C52F6EDBAD /* TelemetryModels.swift */; };
+		B422055BD2001720B1BF7E8B /* MissionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCCF749B87531EDBC7DAE371 /* MissionModels.swift */; };
+		B992B506B792589E075D24FE /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50299946299BE67D3C92F708 /* AppSettings.swift */; };
+		BA53E4CAAC88A319C5EFF9B4 /* MetricCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB58148693A274496DECBB0A /* MetricCard.swift */; };
+		BD9C57DBADEC3C8D11F20427 /* StateViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06031500C8144C0302B1F858 /* StateViews.swift */; };
+		D88ABA485209F0C87074D0F5 /* TelemetryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0768F20BE764C8C5F0723A94 /* TelemetryViewModelTests.swift */; };
+		D98F3850C24195ADAE3E6A50 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079A9A19F90A1E3957615C46 /* RootView.swift */; };
+		E943A6EA675BCD122BDC07AF /* CubeSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C60679022325ECAB57D049 /* CubeSettings.swift */; };
+		E99ECB0C5E87ECBB9B8C726C /* CubeSceneControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730E4D5D1111321B02AB09EA /* CubeSceneControllerTests.swift */; };
+		ED717BF3557D096DEDDE8990 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCFF8D7EE425FB8ACA6552E /* Theme.swift */; };
+		F908B9F8490582196943D0D3 /* MissionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1CA1C3C97C58BDB95A7A12B /* MissionService.swift */; };
+		F99D5E5AA38A89750539470D /* TestDoubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FECFBCC7D040776EA38367B /* TestDoubles.swift */; };
+		FB678D72A916FDD926B0D8FF /* AccessibilityIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660689A8F19D7B1E31A803D /* AccessibilityIdentifiers.swift */; };
+		FC3C7F0B6EFF2764DFA9FA1A /* MissionControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E7BD3EE29FD420660A769E4 /* MissionControlView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4D062DBF44D9DCB0418AF19F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05E4148C464694508EE037B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 153386764852D755AB3CA8DB;
+			remoteInfo = OrbitLab;
+		};
+		F107C20FBA27E725ACF320D7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 05E4148C464694508EE037B8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 153386764852D755AB3CA8DB;
+			remoteInfo = OrbitLab;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05C3519742A879366D0088FA /* KeyValueStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStore.swift; sourceTree = "<group>"; };
+		06031500C8144C0302B1F858 /* StateViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateViews.swift; sourceTree = "<group>"; };
+		0674417C4C96A3965A9B2319 /* AppSettingsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsStoreTests.swift; sourceTree = "<group>"; };
+		0686A2B377A03E18D09E5EB4 /* CubeLabViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeLabViewModelTests.swift; sourceTree = "<group>"; };
+		0768F20BE764C8C5F0723A94 /* TelemetryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemetryViewModelTests.swift; sourceTree = "<group>"; };
+		079A9A19F90A1E3957615C46 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		0B576DD4159FA3F34CD3AE29 /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
+		164E8C15B214D37E387205B0 /* CubeFace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeFace.swift; sourceTree = "<group>"; };
+		188921DA66617574C5DB9BB6 /* OrbitLabUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitLabUITests.swift; sourceTree = "<group>"; };
+		21C9117B5533264346B08EE0 /* LocalMissionServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMissionServiceTests.swift; sourceTree = "<group>"; };
+		2FECFBCC7D040776EA38367B /* TestDoubles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDoubles.swift; sourceTree = "<group>"; };
+		33F43E3D5202E701815857BD /* TelemetryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemetryView.swift; sourceTree = "<group>"; };
+		3B7E311DC431B6E1FE9ECEA3 /* LoadState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadState.swift; sourceTree = "<group>"; };
+		3DF175E4CCB685C52F6EDBAD /* TelemetryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemetryModels.swift; sourceTree = "<group>"; };
+		4E7BD3EE29FD420660A769E4 /* MissionControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionControlView.swift; sourceTree = "<group>"; };
+		50299946299BE67D3C92F708 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		5081EF52387F66FADDDB16CE /* OrbitLabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitLabApp.swift; sourceTree = "<group>"; };
+		573539984D5C36408F43528D /* MissionControlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionControlViewModel.swift; sourceTree = "<group>"; };
+		5758D042B5BAC21A89DC65D1 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		69A809C0631ECD53F01951D9 /* AppSettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettingsStore.swift; sourceTree = "<group>"; };
+		6E6353261D8744515D98F782 /* SimulatedTelemetrySourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimulatedTelemetrySourceTests.swift; sourceTree = "<group>"; };
+		730E4D5D1111321B02AB09EA /* CubeSceneControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeSceneControllerTests.swift; sourceTree = "<group>"; };
+		7D1F52DDC9AFEE9F1A9734D3 /* TelemetryChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemetryChartView.swift; sourceTree = "<group>"; };
+		7DCFF8D7EE425FB8ACA6552E /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		817F19C6C8C0FDD729ACEEA4 /* AsyncTestSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncTestSupport.swift; sourceTree = "<group>"; };
+		8CDC0DA6DDA40F0207B9D2F5 /* TelemetrySource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemetrySource.swift; sourceTree = "<group>"; };
+		8D968F9C955AC900EB7031C1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		921B5F80EEED8EA7A1D071DE /* CubeSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeSceneView.swift; sourceTree = "<group>"; };
+		A25E7E29768011B86F7BD278 /* OrbitLabTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = OrbitLabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2F1AB623B99E0FFDB3CA8B3 /* CubeSceneController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeSceneController.swift; sourceTree = "<group>"; };
+		A6B421A610B513545291B6AA /* OrbitLabUITests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = OrbitLabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B1F88E615568D067BB40F242 /* CubeLabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeLabView.swift; sourceTree = "<group>"; };
+		B51C41F3048062B9DBEB04CD /* KeyValueStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyValueStoreTests.swift; sourceTree = "<group>"; };
+		B9C60679022325ECAB57D049 /* CubeSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeSettings.swift; sourceTree = "<group>"; };
+		BCCF749B87531EDBC7DAE371 /* MissionModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionModels.swift; sourceTree = "<group>"; };
+		CCE6095709F71BC349F2B46C /* MissionControlViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionControlViewModelTests.swift; sourceTree = "<group>"; };
+		D0F653B447E8FFFAD9281F1E /* OrbitLab.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = OrbitLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3C146AE3DD433FF72592918 /* CubeLabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeLabViewModel.swift; sourceTree = "<group>"; };
+		D4CF5AC6313B38DBE9DF9237 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Haptics.swift; sourceTree = "<group>"; };
+		D660689A8F19D7B1E31A803D /* AccessibilityIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccessibilityIdentifiers.swift; sourceTree = "<group>"; };
+		DB58148693A274496DECBB0A /* MetricCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetricCard.swift; sourceTree = "<group>"; };
+		E1CA1C3C97C58BDB95A7A12B /* MissionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionService.swift; sourceTree = "<group>"; };
+		F0EB53EC2BED77ADDBC29499 /* TestFixtures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFixtures.swift; sourceTree = "<group>"; };
+		F966BA534878BE8496677D99 /* TelemetryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemetryViewModel.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		00356C2E328E89020655F49E /* MissionControl */ = {
+			isa = PBXGroup;
+			children = (
+				4E7BD3EE29FD420660A769E4 /* MissionControlView.swift */,
+				573539984D5C36408F43528D /* MissionControlViewModel.swift */,
+			);
+			path = MissionControl;
+			sourceTree = "<group>";
+		};
+		0BE5382A96FC25C18E7B168D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				50299946299BE67D3C92F708 /* AppSettings.swift */,
+				B9C60679022325ECAB57D049 /* CubeSettings.swift */,
+				3B7E311DC431B6E1FE9ECEA3 /* LoadState.swift */,
+				BCCF749B87531EDBC7DAE371 /* MissionModels.swift */,
+				3DF175E4CCB685C52F6EDBAD /* TelemetryModels.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		11C608E0B948556C8A95430F /* CubeLab */ = {
+			isa = PBXGroup;
+			children = (
+				164E8C15B214D37E387205B0 /* CubeFace.swift */,
+				B1F88E615568D067BB40F242 /* CubeLabView.swift */,
+				D3C146AE3DD433FF72592918 /* CubeLabViewModel.swift */,
+				A2F1AB623B99E0FFDB3CA8B3 /* CubeSceneController.swift */,
+				921B5F80EEED8EA7A1D071DE /* CubeSceneView.swift */,
+			);
+			path = CubeLab;
+			sourceTree = "<group>";
+		};
+		2138A48764070960BAF2012E /* OrbitLabUITests */ = {
+			isa = PBXGroup;
+			children = (
+				188921DA66617574C5DB9BB6 /* OrbitLabUITests.swift */,
+			);
+			path = OrbitLabUITests;
+			sourceTree = "<group>";
+		};
+		2721ACC635D1E34506750386 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				D660689A8F19D7B1E31A803D /* AccessibilityIdentifiers.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		2F44117F1666188B5DCD5C33 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				0674417C4C96A3965A9B2319 /* AppSettingsStoreTests.swift */,
+				0686A2B377A03E18D09E5EB4 /* CubeLabViewModelTests.swift */,
+				730E4D5D1111321B02AB09EA /* CubeSceneControllerTests.swift */,
+				CCE6095709F71BC349F2B46C /* MissionControlViewModelTests.swift */,
+				0768F20BE764C8C5F0723A94 /* TelemetryViewModelTests.swift */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		3369711C829D935B44E463A5 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				B51C41F3048062B9DBEB04CD /* KeyValueStoreTests.swift */,
+				21C9117B5533264346B08EE0 /* LocalMissionServiceTests.swift */,
+				6E6353261D8744515D98F782 /* SimulatedTelemetrySourceTests.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		436700810942AD6D919F7125 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D4CF5AC6313B38DBE9DF9237 /* Haptics.swift */,
+				05C3519742A879366D0088FA /* KeyValueStore.swift */,
+				E1CA1C3C97C58BDB95A7A12B /* MissionService.swift */,
+				8CDC0DA6DDA40F0207B9D2F5 /* TelemetrySource.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		4D68E6827E0CF1CCE7D8FB18 /* OrbitLab */ = {
+			isa = PBXGroup;
+			children = (
+				F5A9894A8EF3350832E157D9 /* App */,
+				7EDF72E84633AA7C206C7AB2 /* DesignSystem */,
+				AC0DD29EFDF316ADC7FDDA42 /* Features */,
+				0BE5382A96FC25C18E7B168D /* Models */,
+				63496C2B326FF9B908DD3033 /* Resources */,
+				436700810942AD6D919F7125 /* Services */,
+				2721ACC635D1E34506750386 /* Support */,
+			);
+			path = OrbitLab;
+			sourceTree = "<group>";
+		};
+		63496C2B326FF9B908DD3033 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D968F9C955AC900EB7031C1 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7EDF72E84633AA7C206C7AB2 /* DesignSystem */ = {
+			isa = PBXGroup;
+			children = (
+				DB58148693A274496DECBB0A /* MetricCard.swift */,
+				06031500C8144C0302B1F858 /* StateViews.swift */,
+				7DCFF8D7EE425FB8ACA6552E /* Theme.swift */,
+			);
+			path = DesignSystem;
+			sourceTree = "<group>";
+		};
+		81CB2E4ECB01D4F6FD49F35C = {
+			isa = PBXGroup;
+			children = (
+				4D68E6827E0CF1CCE7D8FB18 /* OrbitLab */,
+				FF525266F09D32114F95798C /* OrbitLabTests */,
+				2138A48764070960BAF2012E /* OrbitLabUITests */,
+				951BF4EE819988350C2BACF6 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8869FA82F81C2A85F62C4A0E /* Telemetry */ = {
+			isa = PBXGroup;
+			children = (
+				7D1F52DDC9AFEE9F1A9734D3 /* TelemetryChartView.swift */,
+				33F43E3D5202E701815857BD /* TelemetryView.swift */,
+				F966BA534878BE8496677D99 /* TelemetryViewModel.swift */,
+			);
+			path = Telemetry;
+			sourceTree = "<group>";
+		};
+		951BF4EE819988350C2BACF6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D0F653B447E8FFFAD9281F1E /* OrbitLab.app */,
+				A25E7E29768011B86F7BD278 /* OrbitLabTests.xctest */,
+				A6B421A610B513545291B6AA /* OrbitLabUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC0DD29EFDF316ADC7FDDA42 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				11C608E0B948556C8A95430F /* CubeLab */,
+				00356C2E328E89020655F49E /* MissionControl */,
+				C174CE79E63FF80A43661DA7 /* Settings */,
+				8869FA82F81C2A85F62C4A0E /* Telemetry */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		C174CE79E63FF80A43661DA7 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				69A809C0631ECD53F01951D9 /* AppSettingsStore.swift */,
+				5758D042B5BAC21A89DC65D1 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		D7EE9DDCAF996CF68A8CA23A /* Doubles */ = {
+			isa = PBXGroup;
+			children = (
+				2FECFBCC7D040776EA38367B /* TestDoubles.swift */,
+			);
+			path = Doubles;
+			sourceTree = "<group>";
+		};
+		F5A9894A8EF3350832E157D9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				0B576DD4159FA3F34CD3AE29 /* AppContainer.swift */,
+				5081EF52387F66FADDDB16CE /* OrbitLabApp.swift */,
+				079A9A19F90A1E3957615C46 /* RootView.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		FA9D095E6B20BAB30C6A128D /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				817F19C6C8C0FDD729ACEEA4 /* AsyncTestSupport.swift */,
+				F0EB53EC2BED77ADDBC29499 /* TestFixtures.swift */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		FF525266F09D32114F95798C /* OrbitLabTests */ = {
+			isa = PBXGroup;
+			children = (
+				D7EE9DDCAF996CF68A8CA23A /* Doubles */,
+				2F44117F1666188B5DCD5C33 /* Features */,
+				3369711C829D935B44E463A5 /* Services */,
+				FA9D095E6B20BAB30C6A128D /* Support */,
+			);
+			path = OrbitLabTests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		153386764852D755AB3CA8DB /* OrbitLab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B125C4155CEC28E3BCB124A0 /* Build configuration list for PBXNativeTarget "OrbitLab" */;
+			buildPhases = (
+				18D99618E44129B6B354A482 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OrbitLab;
+			packageProductDependencies = (
+			);
+			productName = OrbitLab;
+			productReference = D0F653B447E8FFFAD9281F1E /* OrbitLab.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2A08CA427734A294EDB6B9F9 /* OrbitLabUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 943F3179C641E48162B68DF9 /* Build configuration list for PBXNativeTarget "OrbitLabUITests" */;
+			buildPhases = (
+				5E7D92981A56C7D69576A05B /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1DA3D15BF6078FDC804B8077 /* PBXTargetDependency */,
+			);
+			name = OrbitLabUITests;
+			packageProductDependencies = (
+			);
+			productName = OrbitLabUITests;
+			productReference = A6B421A610B513545291B6AA /* OrbitLabUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		6CDBEFA61FA9DD1265EC3869 /* OrbitLabTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4D6E8CA99D52DB0B040AFD58 /* Build configuration list for PBXNativeTarget "OrbitLabTests" */;
+			buildPhases = (
+				7C5DDD47A4DD4FD4338982FF /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F6080996B71FFCC18777DA74 /* PBXTargetDependency */,
+			);
+			name = OrbitLabTests;
+			packageProductDependencies = (
+			);
+			productName = OrbitLabTests;
+			productReference = A25E7E29768011B86F7BD278 /* OrbitLabTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		05E4148C464694508EE037B8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					2A08CA427734A294EDB6B9F9 = {
+						TestTargetID = 153386764852D755AB3CA8DB;
+					};
+				};
+			};
+			buildConfigurationList = 089A76418CDFFCEDB2AE0C13 /* Build configuration list for PBXProject "OrbitLab" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 81CB2E4ECB01D4F6FD49F35C;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 951BF4EE819988350C2BACF6 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				153386764852D755AB3CA8DB /* OrbitLab */,
+				6CDBEFA61FA9DD1265EC3869 /* OrbitLabTests */,
+				2A08CA427734A294EDB6B9F9 /* OrbitLabUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		18D99618E44129B6B354A482 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68429755065B8EC5A95EA478 /* AccessibilityIdentifiers.swift in Sources */,
+				40CEFC216794CE674E391868 /* AppContainer.swift in Sources */,
+				B992B506B792589E075D24FE /* AppSettings.swift in Sources */,
+				8114D5182CC53786E005CF00 /* AppSettingsStore.swift in Sources */,
+				625B0F07D407AF7032EEC5C5 /* CubeFace.swift in Sources */,
+				A1DBF9687FCE3D0E0EB0468A /* CubeLabView.swift in Sources */,
+				7EDDAA971FAA5AA07597AD82 /* CubeLabViewModel.swift in Sources */,
+				41B532D5DFC77BE76E0850B9 /* CubeSceneController.swift in Sources */,
+				9D915A22FA2D640263C312F4 /* CubeSceneView.swift in Sources */,
+				E943A6EA675BCD122BDC07AF /* CubeSettings.swift in Sources */,
+				49996D39871CE1ABDF80B370 /* Haptics.swift in Sources */,
+				3EBAC51A25DA86A36295A4DD /* KeyValueStore.swift in Sources */,
+				0D615D10E11B661BC7EFE98B /* LoadState.swift in Sources */,
+				BA53E4CAAC88A319C5EFF9B4 /* MetricCard.swift in Sources */,
+				FC3C7F0B6EFF2764DFA9FA1A /* MissionControlView.swift in Sources */,
+				8F6052CE0768DD277DA7C796 /* MissionControlViewModel.swift in Sources */,
+				B422055BD2001720B1BF7E8B /* MissionModels.swift in Sources */,
+				F908B9F8490582196943D0D3 /* MissionService.swift in Sources */,
+				4649672263D99DE5D9EC66CC /* OrbitLabApp.swift in Sources */,
+				D98F3850C24195ADAE3E6A50 /* RootView.swift in Sources */,
+				90ED8713F83ED37963B803D5 /* SettingsView.swift in Sources */,
+				BD9C57DBADEC3C8D11F20427 /* StateViews.swift in Sources */,
+				0F106FF9E5237CA1ACCA0B0F /* TelemetryChartView.swift in Sources */,
+				ACADC96A12E70EC2753F71A1 /* TelemetryModels.swift in Sources */,
+				7B8ED362962F4ADCF08556EB /* TelemetrySource.swift in Sources */,
+				23F0E5F149A7B3956C665472 /* TelemetryView.swift in Sources */,
+				076B8FAB7F0AA170B517B91D /* TelemetryViewModel.swift in Sources */,
+				ED717BF3557D096DEDDE8990 /* Theme.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5E7D92981A56C7D69576A05B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FB678D72A916FDD926B0D8FF /* AccessibilityIdentifiers.swift in Sources */,
+				9520087C42E1F5C36BC88108 /* OrbitLabUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7C5DDD47A4DD4FD4338982FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A808F8BFDC33FB9BD8F1335E /* AppSettingsStoreTests.swift in Sources */,
+				082C9777694CCA6BD3C9289C /* AsyncTestSupport.swift in Sources */,
+				598639009FE7CF53CE20BD35 /* CubeLabViewModelTests.swift in Sources */,
+				E99ECB0C5E87ECBB9B8C726C /* CubeSceneControllerTests.swift in Sources */,
+				3A340F035C9B11656E356D0B /* KeyValueStoreTests.swift in Sources */,
+				2F4CE1E4EA7312E884D79046 /* LocalMissionServiceTests.swift in Sources */,
+				8C82361A1E23BE6D2C425DBD /* MissionControlViewModelTests.swift in Sources */,
+				A1BC0C7B4C1F1751F0454954 /* SimulatedTelemetrySourceTests.swift in Sources */,
+				D88ABA485209F0C87074D0F5 /* TelemetryViewModelTests.swift in Sources */,
+				F99D5E5AA38A89750539470D /* TestDoubles.swift in Sources */,
+				03931BD5E08B1D3CCA0B3D5D /* TestFixtures.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1DA3D15BF6078FDC804B8077 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 153386764852D755AB3CA8DB /* OrbitLab */;
+			targetProxy = 4D062DBF44D9DCB0418AF19F /* PBXContainerItemProxy */;
+		};
+		F6080996B71FFCC18777DA74 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 153386764852D755AB3CA8DB /* OrbitLab */;
+			targetProxy = F107C20FBA27E725ACF320D7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		286E77227DF8AB76907B1E49 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orbitlab.OrbitLabTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrbitLab.app/OrbitLab";
+			};
+			name = Debug;
+		};
+		455988ABAF636D9B5BA32860 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = OrbitLab/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orbitlab.OrbitLab;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		675755A3F3DBBDBF2C86237E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8B0C5FAB7F924EE8F6B4C5E5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orbitlab.OrbitLabTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrbitLab.app/OrbitLab";
+			};
+			name = Release;
+		};
+		A2FD253D2EB60A04654827D9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_TREAT_WARNINGS_AS_ERRORS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BCA89491A1F51ED7ADE71BA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orbitlab.OrbitLabUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OrbitLab;
+			};
+			name = Debug;
+		};
+		F9700A0F1E986D976C0F5CD2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = OrbitLab/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.orbitlab.OrbitLab;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FA798E479B1C9D81AE7BBEE7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.orbitlab.OrbitLabUITests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OrbitLab;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		089A76418CDFFCEDB2AE0C13 /* Build configuration list for PBXProject "OrbitLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				675755A3F3DBBDBF2C86237E /* Debug */,
+				A2FD253D2EB60A04654827D9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4D6E8CA99D52DB0B040AFD58 /* Build configuration list for PBXNativeTarget "OrbitLabTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				286E77227DF8AB76907B1E49 /* Debug */,
+				8B0C5FAB7F924EE8F6B4C5E5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		943F3179C641E48162B68DF9 /* Build configuration list for PBXNativeTarget "OrbitLabUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BCA89491A1F51ED7ADE71BA6 /* Debug */,
+				FA798E479B1C9D81AE7BBEE7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B125C4155CEC28E3BCB124A0 /* Build configuration list for PBXNativeTarget "OrbitLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				455988ABAF636D9B5BA32860 /* Debug */,
+				F9700A0F1E986D976C0F5CD2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 05E4148C464694508EE037B8 /* Project object */;
+}

@@ -1,0 +1,674 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A00000000000000000000501 /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000401 /* AppDependencies.swift */; };
+		A00000000000000000000502 /* OrbitLabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000402 /* OrbitLabApp.swift */; };
+		A00000000000000000000503 /* RootTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000403 /* RootTabView.swift */; };
+		A00000000000000000000504 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000404 /* AppSettings.swift */; };
+		A00000000000000000000505 /* MissionModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000405 /* MissionModels.swift */; };
+		A00000000000000000000506 /* TelemetryModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000406 /* TelemetryModels.swift */; };
+		A00000000000000000000507 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000407 /* SettingsStore.swift */; };
+		A00000000000000000000508 /* MissionControlService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000408 /* MissionControlService.swift */; };
+		A00000000000000000000509 /* TelemetryService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000409 /* TelemetryService.swift */; };
+		A00000000000000000000510 /* Haptics.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000410 /* Haptics.swift */; };
+		A00000000000000000000511 /* LoadableState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000411 /* LoadableState.swift */; };
+		A00000000000000000000512 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000412 /* DesignSystem.swift */; };
+		A00000000000000000000513 /* AppSettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000413 /* AppSettingsViewModel.swift */; };
+		A00000000000000000000514 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000414 /* SettingsView.swift */; };
+		A00000000000000000000515 /* MissionControlViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000415 /* MissionControlViewModel.swift */; };
+		A00000000000000000000516 /* MissionControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000416 /* MissionControlView.swift */; };
+		A00000000000000000000517 /* CubeLabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000417 /* CubeLabViewModel.swift */; };
+		A00000000000000000000518 /* CubeSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000418 /* CubeSceneView.swift */; };
+		A00000000000000000000519 /* CubeLabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000419 /* CubeLabView.swift */; };
+		A00000000000000000000520 /* TelemetryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000420 /* TelemetryViewModel.swift */; };
+		A00000000000000000000521 /* TelemetryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000421 /* TelemetryView.swift */; };
+		A00000000000000000000601 /* TestDoubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000431 /* TestDoubles.swift */; };
+		A00000000000000000000602 /* MissionControlViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000432 /* MissionControlViewModelTests.swift */; };
+		A00000000000000000000603 /* CubeLabViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000433 /* CubeLabViewModelTests.swift */; };
+		A00000000000000000000604 /* TelemetryViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000434 /* TelemetryViewModelTests.swift */; };
+		A00000000000000000000605 /* SettingsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000435 /* SettingsViewModelTests.swift */; };
+		A00000000000000000000621 /* OrbitLabUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A00000000000000000000441 /* OrbitLabUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A00000000000000000000141 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A00000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A00000000000000000000100;
+			remoteInfo = OrbitLab;
+		};
+		A00000000000000000000143 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A00000000000000000000001 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A00000000000000000000100;
+			remoteInfo = OrbitLab;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A00000000000000000000300 /* OrbitLab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OrbitLab.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00000000000000000000301 /* OrbitLabTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrbitLabTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00000000000000000000302 /* OrbitLabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OrbitLabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A00000000000000000000401 /* AppDependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App/AppDependencies.swift; sourceTree = "<group>"; };
+		A00000000000000000000402 /* OrbitLabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App/OrbitLabApp.swift; sourceTree = "<group>"; };
+		A00000000000000000000403 /* RootTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App/RootTabView.swift; sourceTree = "<group>"; };
+		A00000000000000000000404 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/AppSettings.swift; sourceTree = "<group>"; };
+		A00000000000000000000405 /* MissionModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/MissionModels.swift; sourceTree = "<group>"; };
+		A00000000000000000000406 /* TelemetryModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models/TelemetryModels.swift; sourceTree = "<group>"; };
+		A00000000000000000000407 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/SettingsStore.swift; sourceTree = "<group>"; };
+		A00000000000000000000408 /* MissionControlService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/MissionControlService.swift; sourceTree = "<group>"; };
+		A00000000000000000000409 /* TelemetryService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/TelemetryService.swift; sourceTree = "<group>"; };
+		A00000000000000000000410 /* Haptics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services/Haptics.swift; sourceTree = "<group>"; };
+		A00000000000000000000411 /* LoadableState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/LoadableState.swift; sourceTree = "<group>"; };
+		A00000000000000000000412 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shared/DesignSystem.swift; sourceTree = "<group>"; };
+		A00000000000000000000413 /* AppSettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/Settings/AppSettingsViewModel.swift; sourceTree = "<group>"; };
+		A00000000000000000000414 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/Settings/SettingsView.swift; sourceTree = "<group>"; };
+		A00000000000000000000415 /* MissionControlViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/MissionControl/MissionControlViewModel.swift; sourceTree = "<group>"; };
+		A00000000000000000000416 /* MissionControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/MissionControl/MissionControlView.swift; sourceTree = "<group>"; };
+		A00000000000000000000417 /* CubeLabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/CubeLab/CubeLabViewModel.swift; sourceTree = "<group>"; };
+		A00000000000000000000418 /* CubeSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/CubeLab/CubeSceneView.swift; sourceTree = "<group>"; };
+		A00000000000000000000419 /* CubeLabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/CubeLab/CubeLabView.swift; sourceTree = "<group>"; };
+		A00000000000000000000420 /* TelemetryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/Telemetry/TelemetryViewModel.swift; sourceTree = "<group>"; };
+		A00000000000000000000421 /* TelemetryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Features/Telemetry/TelemetryView.swift; sourceTree = "<group>"; };
+		A00000000000000000000431 /* TestDoubles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDoubles.swift; sourceTree = "<group>"; };
+		A00000000000000000000432 /* MissionControlViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionControlViewModelTests.swift; sourceTree = "<group>"; };
+		A00000000000000000000433 /* CubeLabViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CubeLabViewModelTests.swift; sourceTree = "<group>"; };
+		A00000000000000000000434 /* TelemetryViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TelemetryViewModelTests.swift; sourceTree = "<group>"; };
+		A00000000000000000000435 /* SettingsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModelTests.swift; sourceTree = "<group>"; };
+		A00000000000000000000441 /* OrbitLabUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrbitLabUITests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A00000000000000000000111 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000000000000000000121 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000000000000000000131 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A00000000000000000000002 = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000004 /* OrbitLab */,
+				A00000000000000000000005 /* OrbitLabTests */,
+				A00000000000000000000006 /* OrbitLabUITests */,
+				A00000000000000000000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A00000000000000000000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000300 /* OrbitLab.app */,
+				A00000000000000000000301 /* OrbitLabTests.xctest */,
+				A00000000000000000000302 /* OrbitLabUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000004 /* OrbitLab */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000401 /* AppDependencies.swift */,
+				A00000000000000000000402 /* OrbitLabApp.swift */,
+				A00000000000000000000403 /* RootTabView.swift */,
+				A00000000000000000000404 /* AppSettings.swift */,
+				A00000000000000000000405 /* MissionModels.swift */,
+				A00000000000000000000406 /* TelemetryModels.swift */,
+				A00000000000000000000407 /* SettingsStore.swift */,
+				A00000000000000000000408 /* MissionControlService.swift */,
+				A00000000000000000000409 /* TelemetryService.swift */,
+				A00000000000000000000410 /* Haptics.swift */,
+				A00000000000000000000411 /* LoadableState.swift */,
+				A00000000000000000000412 /* DesignSystem.swift */,
+				A00000000000000000000413 /* AppSettingsViewModel.swift */,
+				A00000000000000000000414 /* SettingsView.swift */,
+				A00000000000000000000415 /* MissionControlViewModel.swift */,
+				A00000000000000000000416 /* MissionControlView.swift */,
+				A00000000000000000000417 /* CubeLabViewModel.swift */,
+				A00000000000000000000418 /* CubeSceneView.swift */,
+				A00000000000000000000419 /* CubeLabView.swift */,
+				A00000000000000000000420 /* TelemetryViewModel.swift */,
+				A00000000000000000000421 /* TelemetryView.swift */,
+			);
+			path = OrbitLab;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000005 /* OrbitLabTests */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000431 /* TestDoubles.swift */,
+				A00000000000000000000432 /* MissionControlViewModelTests.swift */,
+				A00000000000000000000433 /* CubeLabViewModelTests.swift */,
+				A00000000000000000000434 /* TelemetryViewModelTests.swift */,
+				A00000000000000000000435 /* SettingsViewModelTests.swift */,
+			);
+			path = OrbitLabTests;
+			sourceTree = "<group>";
+		};
+		A00000000000000000000006 /* OrbitLabUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A00000000000000000000441 /* OrbitLabUITests.swift */,
+			);
+			path = OrbitLabUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A00000000000000000000100 /* OrbitLab */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A00000000000000000000212 /* Build configuration list for PBXNativeTarget "OrbitLab" */;
+			buildPhases = (
+				A00000000000000000000110 /* Sources */,
+				A00000000000000000000111 /* Frameworks */,
+				A00000000000000000000112 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OrbitLab;
+			productName = OrbitLab;
+			productReference = A00000000000000000000300 /* OrbitLab.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A00000000000000000000101 /* OrbitLabTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A00000000000000000000222 /* Build configuration list for PBXNativeTarget "OrbitLabTests" */;
+			buildPhases = (
+				A00000000000000000000120 /* Sources */,
+				A00000000000000000000121 /* Frameworks */,
+				A00000000000000000000122 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A00000000000000000000142 /* PBXTargetDependency */,
+			);
+			name = OrbitLabTests;
+			productName = OrbitLabTests;
+			productReference = A00000000000000000000301 /* OrbitLabTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A00000000000000000000102 /* OrbitLabUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A00000000000000000000232 /* Build configuration list for PBXNativeTarget "OrbitLabUITests" */;
+			buildPhases = (
+				A00000000000000000000130 /* Sources */,
+				A00000000000000000000131 /* Frameworks */,
+				A00000000000000000000132 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A00000000000000000000144 /* PBXTargetDependency */,
+			);
+			name = OrbitLabUITests;
+			productName = OrbitLabUITests;
+			productReference = A00000000000000000000302 /* OrbitLabUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A00000000000000000000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastSwiftUpdateCheck = 2660;
+				LastUpgradeCheck = 2660;
+				TargetAttributes = {
+					A00000000000000000000100 = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					A00000000000000000000101 = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = A00000000000000000000100;
+					};
+					A00000000000000000000102 = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = A00000000000000000000100;
+					};
+				};
+			};
+			buildConfigurationList = A00000000000000000000202 /* Build configuration list for PBXProject "OrbitLab" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A00000000000000000000002;
+			productRefGroup = A00000000000000000000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A00000000000000000000100 /* OrbitLab */,
+				A00000000000000000000101 /* OrbitLabTests */,
+				A00000000000000000000102 /* OrbitLabUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A00000000000000000000112 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000000000000000000122 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000000000000000000132 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A00000000000000000000110 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00000000000000000000501 /* AppDependencies.swift in Sources */,
+				A00000000000000000000502 /* OrbitLabApp.swift in Sources */,
+				A00000000000000000000503 /* RootTabView.swift in Sources */,
+				A00000000000000000000504 /* AppSettings.swift in Sources */,
+				A00000000000000000000505 /* MissionModels.swift in Sources */,
+				A00000000000000000000506 /* TelemetryModels.swift in Sources */,
+				A00000000000000000000507 /* SettingsStore.swift in Sources */,
+				A00000000000000000000508 /* MissionControlService.swift in Sources */,
+				A00000000000000000000509 /* TelemetryService.swift in Sources */,
+				A00000000000000000000510 /* Haptics.swift in Sources */,
+				A00000000000000000000511 /* LoadableState.swift in Sources */,
+				A00000000000000000000512 /* DesignSystem.swift in Sources */,
+				A00000000000000000000513 /* AppSettingsViewModel.swift in Sources */,
+				A00000000000000000000514 /* SettingsView.swift in Sources */,
+				A00000000000000000000515 /* MissionControlViewModel.swift in Sources */,
+				A00000000000000000000516 /* MissionControlView.swift in Sources */,
+				A00000000000000000000517 /* CubeLabViewModel.swift in Sources */,
+				A00000000000000000000518 /* CubeSceneView.swift in Sources */,
+				A00000000000000000000519 /* CubeLabView.swift in Sources */,
+				A00000000000000000000520 /* TelemetryViewModel.swift in Sources */,
+				A00000000000000000000521 /* TelemetryView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000000000000000000120 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00000000000000000000601 /* TestDoubles.swift in Sources */,
+				A00000000000000000000602 /* MissionControlViewModelTests.swift in Sources */,
+				A00000000000000000000603 /* CubeLabViewModelTests.swift in Sources */,
+				A00000000000000000000604 /* TelemetryViewModelTests.swift in Sources */,
+				A00000000000000000000605 /* SettingsViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A00000000000000000000130 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A00000000000000000000621 /* OrbitLabUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A00000000000000000000142 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A00000000000000000000100 /* OrbitLab */;
+			targetProxy = A00000000000000000000141 /* PBXContainerItemProxy */;
+		};
+		A00000000000000000000144 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A00000000000000000000100 /* OrbitLab */;
+			targetProxy = A00000000000000000000143 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		A00000000000000000000200 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A00000000000000000000201 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A00000000000000000000210 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "OrbitLab-Codex";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codex.OrbitLab;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		A00000000000000000000211 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "OrbitLab-Codex";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codex.OrbitLab;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		A00000000000000000000220 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codex.OrbitLabTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrbitLab.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OrbitLab";
+			};
+			name = Debug;
+		};
+		A00000000000000000000221 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codex.OrbitLabTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/OrbitLab.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/OrbitLab";
+			};
+			name = Release;
+		};
+		A00000000000000000000230 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codex.OrbitLabUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = OrbitLab;
+			};
+			name = Debug;
+		};
+		A00000000000000000000231 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.codex.OrbitLabUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = OrbitLab;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A00000000000000000000202 /* Build configuration list for PBXProject "OrbitLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000000000000000000200 /* Debug */,
+				A00000000000000000000201 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A00000000000000000000212 /* Build configuration list for PBXNativeTarget "OrbitLab" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000000000000000000210 /* Debug */,
+				A00000000000000000000211 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A00000000000000000000222 /* Build configuration list for PBXNativeTarget "OrbitLabTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000000000000000000220 /* Debug */,
+				A00000000000000000000221 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A00000000000000000000232 /* Build configuration list for PBXNativeTarget "OrbitLabUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A00000000000000000000230 /* Debug */,
+				A00000000000000000000231 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A00000000000000000000001 /* Project object */;
+}
