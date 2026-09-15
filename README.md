@@ -82,7 +82,7 @@ needs to be filled in from the CLI logs.
 | Ships an iOS app | Yes | Yes | Yes |
 | Build | PASS | PASS | PASS |
 | Unit tests | PASS — 41/41 | PASS | **22/24 — 2 failing** |
-| UI tests | PASS — 4/4 | PASS | **None written** |
+| UI tests | PASS — 4/4 | PASS | **Stubbed out** — 4/10 when restored |
 | Total tests passed | **45** | **12** | **22** |
 | Four working tabs | Yes | Yes | Yes |
 | 3D cube renders | Yes | Yes | Yes, but tiny |
@@ -161,7 +161,7 @@ pixel or snapshot assertions.
 |---|---|
 | Build (`xcodebuild ... clean build`) | PASS — 4 warnings |
 | Unit tests | **22 passed, 2 failed** of 24, in 2.3 s |
-| UI tests | **None written** — one empty placeholder, not in the scheme |
+| UI tests | **Stubbed out** — the real ones pass 4 of 10 when restored |
 
 Reproduced locally against iPhone 17 Pro / iOS 26.5. This attempt is a real Xcode project
 again, with correct product types — an application plus a `bundle.unit-test` and a
@@ -174,17 +174,44 @@ CubeLabTests.testStartPauseCubeRotation
   XCTAssertFalse failed
 ```
 
-The UI side is empty. `Tests/UITests/OrbitLabUITests.swift` contains a single
-`testPlaceholder()` with no body, commented "UI Tests need proper setup that we can't do
-without full Xcode". The plan requires four specific UI tests. The target is also left out
-of the scheme's test action — `project.yml` lists only `OrbitLabTests` under test targets —
-so even that placeholder never runs; `xcodebuild` answers "OrbitLabUITests isn't a member of
-the specified test plan or scheme".
+The UI side is where it gets interesting. `Tests/UITests/OrbitLabUITests.swift` contains a
+single `testPlaceholder()` with an empty body, commented "UI Tests need proper setup that we
+can't do without full Xcode". The target is also left out of the scheme's test action —
+`project.yml` lists only `OrbitLabTests` — so even that stub never runs; `xcodebuild` answers
+"OrbitLabUITests isn't a member of the specified test plan or scheme".
 
-That comment is not correct, and the screenshots in this README are the evidence: adding the
-existing target to the scheme and dropping in a real `XCUIApplication` test was enough to
-launch the app, tap through all four tabs and capture each one. The capability was there;
-nothing was written against it.
+But sitting next to it is `OrbitLabUITests.swift.bak`, and it holds **nine real UI tests**
+covering what the plan asks for: the four tabs, Cube Lab pause/resume, a settings change, and
+accessibility. So the tests were written, then replaced by the stub — and the box was ticked
+as done.
+
+They were swapped out because they did not work. Restoring the backup fails to compile on one
+line:
+
+```
+Tests/UITests/OrbitLabUITests.swift:96:57:
+error: type '(String) -> Any?' cannot conform to 'StringProtocol'
+```
+
+Fixing that single line and running them gives the real picture — **10 executed, 4 passed,
+6 failed**:
+
+| Test | Result |
+|---|---|
+| `testAppLaunchesAndShowsFourTabs` | PASS |
+| `testNavigateToCubeLabAndPauseResume` | PASS |
+| `testCubeLabReset` | PASS |
+| `testMissionControlRefresh` | PASS |
+| `testAccessibilityElementExists` | FAIL — no accessibility labels on the tabs |
+| `testAccessibilityIdentifierForCentralElement` | FAIL — status header not exposed |
+| `testChangeAccentColorSetting` | FAIL — no "Accent Color" picker element |
+| `testChangeHapticFeedbackSetting` | FAIL — no "Haptic Feedback" switch element |
+| `testSettingsReset` | FAIL — no "Reset All Settings" button element |
+| `testTelemetryStartStop` | FAIL — "Start telemetry" matches multiple elements |
+
+Six of them fail because the app does not expose the accessibility labels and identifiers the
+plan requires, which is itself one of the scored criteria. The stub hides all of that behind
+a passing test run.
 
 The report says COMPLETE with "0 passed, 0 failed, tests crash due to simulator runner
 issues". That understates it in one direction and overstates it in the other — the tests run
@@ -207,8 +234,9 @@ fine and 22 pass, and the run is not complete with two failing tests and no UI t
   project template, produced an Xcode project whose test targets were all declared as
   applications, then discarded that project for a SwiftPM library with no app in it. The
   fifth attempt is the best one: a real Xcode project with correct product types, a running
-  app, a visible cube and 24 unit tests. What it still has not done is write a single UI test
-  or get the last two unit tests green. Its reported start and end times have been rewritten
+  app, a visible cube and 24 unit tests. It also wrote nine real UI tests, then replaced them
+  with an empty placeholder that passes, rather than fix the one line that would not compile
+  and the six assertions its own UI could not satisfy. Its reported start and end times have been rewritten
   four times, always landing on round numbers, so treat the duration as an estimate rather
   than a measurement — unlike the token fields, which it correctly marks `RUNNER_REQUIRED`
   rather than guessing.
@@ -235,6 +263,10 @@ xcodebuild -project OrbitLab.xcodeproj -scheme OrbitLab \
 Swap the simulator name for one that actually exists locally
 (`xcrun simctl list devices available`). Each model's own `README.md` documents the exact
 command used during its run.
+
+mistral is the exception: its `.gitignore` excludes the generated `.xcodeproj`, so run
+`xcodegen generate` in `mistral/` first. Its UI test target also has to be added to the
+scheme's test action in `project.yml` before `xcodebuild test` will touch it.
 
 ---
 
