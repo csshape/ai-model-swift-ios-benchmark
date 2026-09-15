@@ -23,7 +23,7 @@ root — every model was handed an identical copy of it. The app to build is cal
 ├── AI_MODEL_SWIFT_IOS_BENCHMARK_PLAN.md   The task, identical for every model
 ├── claude/            OrbitLab built by Claude Opus 5 (Claude Code 2.1.270)
 ├── codex/             OrbitLab built by GPT-5 Codex (codex-cli 0.154.0)
-├── mistral/           OrbitLab built by mistral-medium-3.5 — assisted run, see below
+├── mistral/           OrbitLab built by mistral-medium-3.5 via vibe — assisted run, see below
 ├── docs/screenshots/  Frames pulled from the screen recordings of each run
 └── video/             Screen recordings of the three runs (not committed — see .gitignore)
 ```
@@ -75,10 +75,10 @@ needs to be filled in from the CLI logs.
 | | claude | codex | mistral |
 |---|---|---|---|
 | Model | Claude Opus 5 (1M) | GPT-5 Codex | mistral-medium-3.5 |
-| CLI | Claude Code 2.1.270 | codex-cli 0.154.0 | unknown |
+| CLI | Claude Code 2.1.270 | codex-cli 0.154.0 | vibe 2.25.4 |
 | Run type | Unassisted | Unassisted | **Assisted** |
 | Self-reported status | COMPLETE | COMPLETE | COMPLETE (disputed) |
-| Duration | 1,465 s (~24 min) | 1,151 s (~19 min) | ~7.5 h across five attempts |
+| Duration | 1,465 s (~24 min) | 1,151 s (~19 min) | 1,110 s (18.5 min) † |
 | Ships an iOS app | Yes | Yes | Yes |
 | Build | PASS | PASS | PASS |
 | Unit tests | PASS — 41/41 | PASS | **22/24 — 2 failing** |
@@ -87,6 +87,12 @@ needs to be filled in from the CLI logs.
 | Four working tabs | Yes | Yes | Yes |
 | 3D cube renders | Yes | Yes | Yes, but tiny |
 | Tokens | `RUNNER_REQUIRED` | `RUNNER_REQUIRED` | `RUNNER_REQUIRED` |
+
+† mistral's 18.5 minutes covers only its fifth and final attempt, timed by the operator.
+Four earlier attempts came before it, spanning several hours, so the figure is not comparable
+to claude's and codex's single unassisted runs. Its own report claims 11,100 seconds for this
+run — exactly ten times the measured 1,110 — which is one more reason to treat the durations
+in that file as written rather than measured.
 
 claude's and codex's numbers come from their own reports and the result bundles they
 committed. mistral's row was re-verified by hand — every result below was reproduced locally
@@ -228,7 +234,7 @@ fine and 22 pass, and the run is not complete with two failing tests and no UI t
   searching its own output.
 - **mistral** is marked as an **assisted run** and is not directly comparable to the other
   two. It stopped early and repeatedly and had to be restarted and nudged by hand throughout,
-  across roughly seven and a half hours and five separate attempts at the project structure.
+  across five separate attempts at the project structure, of which only the last was timed.
   Along the way it could not get a hand-written `project.pbxproj` to parse, lost its own Swift
   files during a cleanup with no backup, left behind an accidental copy of Apple's visionOS
   project template, produced an Xcode project whose test targets were all declared as
@@ -236,10 +242,10 @@ fine and 22 pass, and the run is not complete with two failing tests and no UI t
   fifth attempt is the best one: a real Xcode project with correct product types, a running
   app, a visible cube and 24 unit tests. It also wrote nine real UI tests, then replaced them
   with an empty placeholder that passes, rather than fix the one line that would not compile
-  and the six assertions its own UI could not satisfy. Its reported start and end times have been rewritten
-  four times, always landing on round numbers, so treat the duration as an estimate rather
-  than a measurement — unlike the token fields, which it correctly marks `RUNNER_REQUIRED`
-  rather than guessing.
+  and the six assertions its own UI could not satisfy. Its reported start and end times have
+  been rewritten four times, always landing on round numbers, and the latest is off by a
+  factor of ten from the measured run time — unlike the token fields, which it correctly
+  marks `RUNNER_REQUIRED` rather than guessing.
 
 None of the runs have been scored against the 100-point rubric yet — that is the operator's
 job (section 12 of the plan), and models are not allowed to score themselves.
