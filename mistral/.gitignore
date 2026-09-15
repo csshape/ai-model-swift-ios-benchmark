@@ -1,0 +1,60 @@
+# Xcode
+.idea/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcworkspace
+*.xcodeproj
+
+# Xcode build files
+build/
+DerivedData/
+
+# Swift Package Manager
+.Package.resolved
+Package.resolved
+
+# XcodeGen
+project.xcworkspace/
+
+# Local overrides
+*.local
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/
+Cartfile.resolved
+
+# Accio
+_accio/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/test_output
+fastlane/Coverage.xml
+fastlane/Screenshots
+
+# SwiftLint
+swiftlint.cache
+
+# macOS
+.DS_Store
+*.pem
+
+# Local env files
+.env*.local
+.env
+
+# Logs
+*.log
+*.crash
+
+# IDE
+*.swiftpm
+*.xccheckout
+!default.xccheckout

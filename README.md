@@ -78,14 +78,14 @@ needs to be filled in from the CLI logs.
 | CLI | Claude Code 2.1.270 | codex-cli 0.154.0 | unknown |
 | Run type | Unassisted | Unassisted | **Assisted** |
 | Self-reported status | COMPLETE | COMPLETE | COMPLETE (disputed) |
-| Duration | 1,465 s (~24 min) | 1,151 s (~19 min) | ~4.5 h across restarts |
-| Ships an iOS app | Yes | Yes | **No — library only** |
-| Build | PASS | PASS | PASS (library) |
-| Unit tests | PASS — 41/41 | PASS | PASS — 13/13 |
-| UI tests | PASS — 4/4 | PASS | **FAIL — 0/4** |
-| Total tests passed | **45** | **12** | **13** |
-| Four working tabs | Yes | Yes | Code only, no app |
-| 3D cube renders | Yes | Yes | **No** |
+| Duration | 1,465 s (~24 min) | 1,151 s (~19 min) | ~7.5 h across five attempts |
+| Ships an iOS app | Yes | Yes | Yes |
+| Build | PASS | PASS | PASS |
+| Unit tests | PASS — 41/41 | PASS | **22/24 — 2 failing** |
+| UI tests | PASS — 4/4 | PASS | **None written** |
+| Total tests passed | **45** | **12** | **22** |
+| Four working tabs | Yes | Yes | Yes |
+| 3D cube renders | Yes | Yes | Yes, but tiny |
 | Tokens | `RUNNER_REQUIRED` | `RUNNER_REQUIRED` | `RUNNER_REQUIRED` |
 
 claude's and codex's numbers come from their own reports and the result bundles they
@@ -103,21 +103,21 @@ Pulled from the screen recording of each run. Same four tabs, same order, for al
 | **Telemetry** | <img src="docs/screenshots/claude-telemetry.png" width="200"> | <img src="docs/screenshots/codex-telemetry.png" width="200"> | <img src="docs/screenshots/mistral-telemetry.png" width="200"> |
 | **Settings** | <img src="docs/screenshots/claude-settings.png" width="200"> | <img src="docs/screenshots/codex-settings.png" width="200"> | <img src="docs/screenshots/mistral-settings.png" width="200"> |
 
-The mistral column is from the recording of an earlier attempt. Its current package builds
-no app at all, so there is nothing left to screenshot — the views in the table are the
-closest record of what its code renders.
+claude's and codex's frames come from their screen recordings. mistral's were captured from
+its current build by driving the app through a UI test, since no recording of this attempt
+exists.
 
 What the screenshots show, beyond the tables:
 
 - **claude** and **codex** both render a real, textured, rotating SceneKit cube with
   labelled faces, working playback controls and a speed slider.
-- **mistral** renders **no cube at all** — the Cube Lab card is empty on every frame of its
-  recording. The geometry is real `SCNBox`, but the default camera sits at z = −5 and a
-  SceneKit camera looks down its own −Z axis, so it points away from the cube at the origin.
-  Nothing continuously animates it either: the rotation is recomputed only inside
-  `updateUIView`, which SwiftUI calls when state changes rather than once per frame. Its
-  floating tab bar also overlaps page content and clips titles and buttons on all four tabs,
-  and the app runs letterboxed because no launch screen is configured.
+- **mistral** now renders a cube, and its controls work — pause, reset, speed, auto-rotate.
+  It is drawn very small in an otherwise empty screen, with no textures or labelled faces.
+- mistral's layout problems are unchanged across all four tabs: the floating tab bar sits on
+  top of page content and hides it — the Telemetry stream controls are behind it, which is
+  why that tab shows an empty graph at 0.0 — screen titles collide with the cards beneath
+  them, and the app still runs letterboxed with black bars because no launch screen is
+  configured.
 - All three ship a working accent-colour picker; claude's and codex's re-tint the whole app
   immediately, which is visible across the Telemetry and Settings shots.
 
@@ -155,38 +155,40 @@ Result bundles are under `codex/build/`. Ran against a booted iPhone 17 Pro addr
 simulator UUID. SceneKit rendering is validated only through build and UI navigation — no
 pixel or snapshot assertions.
 
-**mistral** — 13 unit tests pass, but there is no app
+**mistral** — 22 of 24 unit tests pass, no UI tests exist
 
 | Check | Result |
 |---|---|
-| Build (`xcodebuild -scheme OrbitLab`) | PASS — builds a **library**, no `.app` produced |
-| Unit tests | **PASS — 13/13** in 1.0 s |
-| UI tests | **FAIL — 0/4** |
+| Build (`xcodebuild ... clean build`) | PASS — 4 warnings |
+| Unit tests | **22 passed, 2 failed** of 24, in 2.3 s |
+| UI tests | **None written** — one empty placeholder, not in the scheme |
 
-Reproduced locally against iPhone 17 Pro / iOS 26.5. The 13 unit tests are real and they
-pass. The four UI tests all fail the same way:
+Reproduced locally against iPhone 17 Pro / iOS 26.5. This attempt is a real Xcode project
+again, with correct product types — an application plus a `bundle.unit-test` and a
+`bundle.ui-testing` target — and 24 unit tests that genuinely run. Two of them fail:
 
 ```
-Assertion failure in -[XCUIApplication init], XCUIApplication.m:113
-error: No target application path specified via test configuration
+MissionControlTests.testLoadingToContentStateSuccess
+  XCTAssertEqual failed: ("2") is not equal to ("1")
+CubeLabTests.testStartPauseCubeRotation
+  XCTAssertFalse failed
 ```
 
-The cause is structural, not a flaky test. mistral abandoned the Xcode project — there is no
-longer an `.xcodeproj` or a `project.yml` anywhere in its folder — and replaced it with a
-Swift Package Manager package whose only product is `.library(name: "OrbitLab")`. A library
-has no host app, so `XCUIApplication` has nothing to launch and no UI test can ever pass.
-Building it produces `OrbitLab.o`, two `.xctest` bundles and no app bundle at all.
+The UI side is empty. `Tests/UITests/OrbitLabUITests.swift` contains a single
+`testPlaceholder()` with no body, commented "UI Tests need proper setup that we can't do
+without full Xcode". The plan requires four specific UI tests. The target is also left out
+of the scheme's test action — `project.yml` lists only `OrbitLabTests` under test targets —
+so even that placeholder never runs; `xcodebuild` answers "OrbitLabUITests isn't a member of
+the specified test plan or scheme".
 
-That trade is what unblocked the unit tests: the previous Xcode project declared all three
-targets as `com.apple.product-type.application`, so `xcodebuild test` failed with
-"There are no test bundles available to test." Moving to SwiftPM fixed the test bundles by
-removing the application.
+That comment is not correct, and the screenshots in this README are the evidence: adding the
+existing target to the scheme and dropping in a real `XCUIApplication` test was enough to
+launch the app, tap through all four tabs and capture each one. The capability was there;
+nothing was written against it.
 
-Two claims in its report do not hold up. The validation table lists
-`xcrun simctl install ... build/Debug-iphonesimulator/OrbitLab.app` as PASS, but no such
-bundle is produced by the current package. And the status reads COMPLETE while four required
-tests fail and the plan's core deliverable — a buildable iOS app — is absent. The plan lists
-"no buildable app or no real Xcode project" as an automatic disqualification.
+The report says COMPLETE with "0 passed, 0 failed, tests crash due to simulator runner
+issues". That understates it in one direction and overstates it in the other — the tests run
+fine and 22 pass, and the run is not complete with two failing tests and no UI tests.
 
 ### Notes per run
 
@@ -199,15 +201,17 @@ tests fail and the plan's core deliverable — a buildable iOS app — is absent
   searching its own output.
 - **mistral** is marked as an **assisted run** and is not directly comparable to the other
   two. It stopped early and repeatedly and had to be restarted and nudged by hand throughout,
-  across roughly four and a half hours and four separate attempts at the project structure.
+  across roughly seven and a half hours and five separate attempts at the project structure.
   Along the way it could not get a hand-written `project.pbxproj` to parse, lost its own Swift
   files during a cleanup with no backup, left behind an accidental copy of Apple's visionOS
-  project template, then generated a working Xcode project whose test targets were all
-  declared as applications, and finally discarded that project for a SwiftPM library. Each
-  attempt fixed the previous blocker by removing the thing that caused it; the last one
-  removed the app. Its reported start and end times have been rewritten three times, always
-  landing on round numbers, so treat the duration as an estimate rather than a measurement —
-  unlike the token fields, which it correctly marks `RUNNER_REQUIRED` rather than guessing.
+  project template, produced an Xcode project whose test targets were all declared as
+  applications, then discarded that project for a SwiftPM library with no app in it. The
+  fifth attempt is the best one: a real Xcode project with correct product types, a running
+  app, a visible cube and 24 unit tests. What it still has not done is write a single UI test
+  or get the last two unit tests green. Its reported start and end times have been rewritten
+  four times, always landing on round numbers, so treat the duration as an estimate rather
+  than a measurement — unlike the token fields, which it correctly marks `RUNNER_REQUIRED`
+  rather than guessing.
 
 None of the runs have been scored against the 100-point rubric yet — that is the operator's
 job (section 12 of the plan), and models are not allowed to score themselves.

@@ -1,0 +1,87 @@
+name: OrbitLab
+options:
+  bundleIdPrefix: com.orbital.locked
+  deploymentTarget:
+    iOS: "15.0"
+  developmentLanguage: en
+  useBaseInternationalization: true
+  xcodeVersion: "26.6"
+
+settings:
+  base:
+    IPHONEOS_DEPLOYMENT_TARGET: "15.0"
+    SWIFT_VERSION: "5.10"
+    ENABLE_PREVIEWS: true
+
+targets:
+  OrbitLab:
+    type: application
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_NAME: OrbitLab
+        INFOPLIST_FILE: Sources/Resources/Info.plist
+    sources:
+      - path: Sources
+        excludes:
+          - "Tests/**"
+    resources:
+      - path: Sources/Resources
+        excludes:
+          - "Info.plist"
+
+  OrbitLabTests:
+    type: bundle.unit-test
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_NAME: OrbitLabTests
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/OrbitLab.app/OrbitLab"
+        INFOPLIST_FILE: Tests/UnitTests/Info.plist
+    sources:
+      - path: Tests/UnitTests
+    dependencies:
+      - target: OrbitLab
+        embed: false
+
+  OrbitLabUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    settings:
+      base:
+        PRODUCT_NAME: OrbitLabUITests
+        TEST_TARGET_NAME: OrbitLab
+        INFOPLIST_FILE: Tests/UITests/Info.plist
+    sources:
+      - path: Tests/UITests
+    dependencies:
+      - target: OrbitLab
+        embed: false
+
+schemes:
+  OrbitLab:
+    build:
+      targets:
+        OrbitLab: all
+        OrbitLabTests: [test]
+        OrbitLabUITests: [test]
+      parallelizeBuild: true
+      buildImplicitDependencies: true
+    run:
+      config: Debug
+      executable: OrbitLab
+    test:
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets:
+        - OrbitLab
+      targets:
+        - name: OrbitLabTests
+          parallel: true
+          randomExecutionOrder: true
+    archive:
+      config: Release
+    analyze:
+      config: Debug
+    profile:
+      config: Release

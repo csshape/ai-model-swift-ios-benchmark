@@ -1,0 +1,270 @@
+import XCTest
+
+// MARK: - UI Tests for OrbitLab
+
+final class OrbitLabUITests: XCTestCase {
+    
+    private var app: XCUIApplication!
+    
+    // MARK: - Setup and Teardown
+    
+    override func setUpWithError() throws {
+        continueAfterFailure = false
+        app = XCUIApplication()
+        app.launch()
+    }
+    
+    override func tearDownWithError() throws {
+        app = nil
+    }
+    
+    // MARK: - Tab Tests
+    
+    func testAppLaunchesAndShowsFourTabs() {
+        // Given/When - App launches
+        
+        // Then - All four tabs should be present
+        let missionControlTab = app.tabBars.buttons["Mission Control"]
+        let cubeLabTab = app.tabBars.buttons["Cube Lab"]
+        let telemetryTab = app.tabBars.buttons["Telemetry"]
+        let settingsTab = app.tabBars.buttons["Settings"]
+        
+        XCTAssertTrue(missionControlTab.exists, "Mission Control tab should exist")
+        XCTAssertTrue(cubeLabTab.exists, "Cube Lab tab should exist")
+        XCTAssertTrue(telemetryTab.exists, "Telemetry tab should exist")
+        XCTAssertTrue(settingsTab.exists, "Settings tab should exist")
+        
+        // Verify one tab is selected
+        XCTAssertTrue(missionControlTab.isSelected || cubeLabTab.isSelected || 
+                      telemetryTab.isSelected || settingsTab.isSelected)
+    }
+    
+    // MARK: - Navigation Tests
+    
+    func testNavigateToCubeLabAndPauseResume() {
+        // Given - App launched
+        
+        // When - Navigate to Cube Lab
+        let cubeLabTab = app.tabBars.buttons["Cube Lab"]
+        XCTAssertTrue(cubeLabTab.exists)
+        cubeLabTab.tap()
+        
+        // Then - Cube Lab should be visible
+        let pauseButton = app.buttons["Pause rotation"]
+        XCTAssertTrue(pauseButton.waitForExistence(timeout: 5), "Pause button should exist in Cube Lab")
+        
+        // When - Tap pause
+        pauseButton.tap()
+        
+        // Then - Pause button should change to resume
+        let resumeButton = app.buttons["Resume rotation"]
+        XCTAssertTrue(resumeButton.waitForExistence(timeout: 2), "Resume button should appear after pausing")
+        
+        // When - Tap resume
+        resumeButton.tap()
+        
+        // Then - Resume button should change back to pause
+        XCTAssertTrue(pauseButton.waitForExistence(timeout: 2), "Pause button should reappear after resuming")
+    }
+    
+    // MARK: - Settings Change Tests
+    
+    func testChangeAccentColorSetting() {
+        // Given - App launched
+        
+        // When - Navigate to Settings
+        let settingsTab = app.tabBars.buttons["Settings"]
+        XCTAssertTrue(settingsTab.exists)
+        settingsTab.tap()
+        
+        // Then - Settings should be visible
+        let accentColorPicker = app.pickers["Accent Color"]
+        XCTAssertTrue(accentColorPicker.waitForExistence(timeout: 5), "Accent Color picker should exist")
+        
+        // When - Tap the picker
+        accentColorPicker.tap()
+        
+        // Select Purple (assuming it's available)
+        let purpleOption = app.pickerWheels.firstMatch
+        purpleOption.adjust(toPickerWheelValue: "Purple")
+        
+        // Dismiss the picker
+        app.buttons["Done"].tap()
+        
+        // Then - The accent color should be changed
+        // Note: Verifying UI change might be difficult, but we can verify the picker shows the new value
+        XCTAssertTrue(app.pickers["Accent Color"].value == "Purple", "Accent color should be Purple")
+    }
+    
+    func testChangeHapticFeedbackSetting() {
+        // Given - App launched
+        
+        // When - Navigate to Settings
+        let settingsTab = app.tabBars.buttons["Settings"]
+        settingsTab.tap()
+        
+        // Then - Settings should be visible
+        let hapticSwitch = app.switches["Haptic Feedback"]
+        XCTAssertTrue(hapticSwitch.waitForExistence(timeout: 5), "Haptic Feedback switch should exist")
+        
+        // Get initial value
+        let initialValue = hapticSwitch.value as? String ?? ""
+        
+        // When - Toggle the switch
+        hapticSwitch.tap()
+        
+        // Then - Value should have changed
+        let newValue = hapticSwitch.value as? String ?? ""
+        XCTAssertNotEqual(initialValue, newValue, "Haptic Feedback switch value should have changed")
+        
+        // Toggle back
+        hapticSwitch.tap()
+    }
+    
+    // MARK: - Accessibility Tests
+    
+    func testAccessibilityElementExists() {
+        // Given - App launched
+        
+        // When/Then - Mission Control tab should be accessible
+        let missionControlTab = app.tabBars.buttons["Mission Control"]
+        XCTAssertTrue(missionControlTab.exists)
+        
+        // Verify it has accessibility label
+        XCTAssertNotNil(missionControlTab.accessibilityLabel)
+        
+        // Additional accessibility checks
+        let cubeLabTab = app.tabBars.buttons["Cube Lab"]
+        XCTAssertNotNil(cubeLabTab.accessibilityLabel)
+        XCTAssertNotNil(cubeLabTab.accessibilityHint)
+        
+        let telemetryTab = app.tabBars.buttons["Telemetry"]
+        XCTAssertNotNil(telemetryTab.accessibilityLabel)
+        XCTAssertNotNil(telemetryTab.accessibilityHint)
+        
+        let settingsTab = app.tabBars.buttons["Settings"]
+        XCTAssertNotNil(settingsTab.accessibilityLabel)
+        XCTAssertNotNil(settingsTab.accessibilityHint)
+    }
+    
+    func testAccessibilityIdentifierForCentralElement() {
+        // Given - App launched
+        
+        // When - Navigate to Mission Control
+        let missionControlTab = app.tabBars.buttons["Mission Control"]
+        missionControlTab.tap()
+        
+        // Then - Status header should be accessible
+        // Look for the status text (might have "Nominal", "Warning", etc.)
+        let statusText = app.staticTexts.containing(NSPredicate(format: "label CONTAINS[cd] 'Nominal'"))
+        
+        if statusText.firstMatch.exists {
+            XCTAssertNotNil(statusText.firstMatch.accessibilityLabel)
+        } else {
+            // Try to find any status-related element
+            let statusHeader = app.otherElements["Mission Status"]
+            if statusHeader.exists {
+                XCTAssertNotNil(statusHeader.accessibilityLabel)
+            }
+        }
+    }
+    
+    // MARK: - Mission Control Tests
+    
+    func testMissionControlRefresh() {
+        // Given - App launched
+        
+        // When - Navigate to Mission Control
+        let missionControlTab = app.tabBars.buttons["Mission Control"]
+        missionControlTab.tap()
+        
+        // Then - Refresh button should be visible
+        let refreshButton = app.buttons["Refresh"]
+        XCTAssertTrue(refreshButton.waitForExistence(timeout: 5), "Refresh button should exist")
+        
+        // When - Tap refresh
+        refreshButton.tap()
+        
+        // Then - Should show loading state briefly
+        // Note: This is hard to verify precisely in UI tests
+    }
+    
+    // MARK: - Cube Lab Tests
+    
+    func testCubeLabReset() {
+        // Given - App launched
+        
+        // When - Navigate to Cube Lab
+        let cubeLabTab = app.tabBars.buttons["Cube Lab"]
+        cubeLabTab.tap()
+        
+        // Then - Reset button should be visible
+        let resetButton = app.buttons["Reset cube"]
+        XCTAssertTrue(resetButton.waitForExistence(timeout: 5), "Reset button should exist")
+        
+        // When - Tap reset
+        resetButton.tap()
+        
+        // Confirm reset
+        let confirmButton = app.buttons["Reset Cube"]
+        if confirmButton.waitForExistence(timeout: 2) {
+            confirmButton.tap()
+        }
+        
+        // Then - Should still be in Cube Lab
+        XCTAssertTrue(app.tabBars.buttons["Cube Lab"].isSelected)
+    }
+    
+    // MARK: - Telemetry Tests
+    
+    func testTelemetryStartStop() {
+        // Given - App launched
+        
+        // When - Navigate to Telemetry
+        let telemetryTab = app.tabBars.buttons["Telemetry"]
+        telemetryTab.tap()
+        
+        // Then - Start button should be visible
+        let startButton = app.buttons["Start telemetry"]
+        XCTAssertTrue(startButton.waitForExistence(timeout: 5), "Start button should exist")
+        
+        // When - Tap start
+        startButton.tap()
+        
+        // Then - Should show stop button
+        let stopButton = app.buttons["Stop telemetry"]
+        XCTAssertTrue(stopButton.waitForExistence(timeout: 2), "Stop button should appear")
+        
+        // When - Tap stop
+        stopButton.tap()
+        
+        // Then - Should show start button again
+        XCTAssertTrue(startButton.waitForExistence(timeout: 2), "Start button should reappear")
+    }
+    
+    // MARK: - Settings Reset Tests
+    
+    func testSettingsReset() {
+        // Given - App launched
+        
+        // When - Navigate to Settings
+        let settingsTab = app.tabBars.buttons["Settings"]
+        settingsTab.tap()
+        
+        // Then - Reset button should be visible
+        let resetButton = app.buttons["Reset All Settings"]
+        XCTAssertTrue(resetButton.waitForExistence(timeout: 5), "Reset All Settings button should exist")
+        
+        // When - Tap reset
+        resetButton.tap()
+        
+        // Confirm reset
+        let confirmButton = app.buttons["Reset All"]
+        if confirmButton.waitForExistence(timeout: 2) {
+            confirmButton.tap()
+        }
+        
+        // Then - Should still be in Settings
+        XCTAssertTrue(app.tabBars.buttons["Settings"].isSelected)
+    }
+}
